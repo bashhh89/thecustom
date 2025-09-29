@@ -1,0 +1,67 @@
+// This is the heart of our application.
+// packages/db/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Folder {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Parent folder for nesting (optional)
+  parentId  String?
+  parent    Folder?  @relation("FolderHierarchy", fields: [parentId], references: [id])
+  children  Folder[] @relation("FolderHierarchy")
+
+  // SOWs in this folder
+  sows      SOW[]
+
+  @@unique([name, parentId], map: "unique_folder_name_parent")
+}
+
+model SOW {
+  id        String   @id @default(cuid())
+  name      String   @default("Untitled SOW")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Folder relationship (optional - SOWs can exist without folders)
+  folderId  String?
+  folder    Folder?  @relation(fields: [folderId], references: [id], onDelete: SetNull)
+
+  // The confirmed SOWData structure
+  sowData   Json?
+
+  // Each SOW has a history of messages
+  messages  Message[]
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  role      String   // "user" or "assistant"
+  content   String
+  createdAt DateTime @default(now())
+
+  sowId     String
+  sow       SOW      @relation(fields: [sowId], references: [id], onDelete: Cascade)
+}
+
+model RateCardItem {
+  id   String @id @default(cuid())
+  name String @unique
+  rate Int
+}
+
+model Setting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String @db.Text
+}

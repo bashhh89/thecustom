@@ -1,0 +1,33 @@
+2025-09-26T06:19:23: 
+2025-09-26T06:19:23: > @sow-workbench/api@1.0.0 dev /root/thecustom/apps/api
+2025-09-26T06:19:23: > tsx watch src/index.ts
+2025-09-26T06:19:23: 
+2025-09-26T06:19:24: node:events:497
+2025-09-26T06:19:24:       throw er; // Unhandled 'error' event
+2025-09-26T06:19:24:       ^
+2025-09-26T06:19:24: 
+2025-09-26T06:19:24: Error: listen EADDRINUSE: address already in use :::3003
+2025-09-26T06:19:24:     at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+2025-09-26T06:19:24:     at listenInCluster (node:net:1997:12)
+2025-09-26T06:19:24:     at Server.listen (node:net:2102:7)
+2025-09-26T06:19:24:     at Function.listen (/root/thecustom/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/application.js:635:24)
+2025-09-26T06:19:24:     at express (/root/thecustom/apps/api/src/index.ts:29:5)
+2025-09-26T06:19:24:     at Object.<anonymous> (/root/thecustom/apps/api/src/index.ts:31:2)
+2025-09-26T06:19:24:     at Module._compile (node:internal/modules/cjs/loader:1706:14)
+2025-09-26T06:19:24:     at Object.transformer (/root/thecustom/node_modules/.pnpm/tsx@4.20.6/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+2025-09-26T06:19:24:     at Module.load (node:internal/modules/cjs/loader:1441:32)
+2025-09-26T06:19:24:     at Function._load (node:internal/modules/cjs/loader:1263:12)
+2025-09-26T06:19:24: Emitted 'error' event on Server instance at:
+2025-09-26T06:19:24:     at emitErrorNT (node:net:1976:8)
+2025-09-26T06:19:24:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2025-09-26T06:19:24:   code: 'EADDRINUSE',
+2025-09-26T06:19:24:   errno: -98,
+2025-09-26T06:19:24:   syscall: 'listen',
+2025-09-26T06:19:24:   address: '::',
+2025-09-26T06:19:24:   port: 3003
+2025-09-26T06:19:24: }
+2025-09-26T06:19:24: 
+2025-09-26T06:19:24: Node.js v22.19.0
+2025-09-26T06:21:55: /root/thecustom/apps/api:
+2025-09-26T06:21:55:  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @sow-workbench/api@1.0.0 dev: `tsx watch src/index.ts`
+2025-09-26T06:21:55: Command failed with signal "SIGINT"

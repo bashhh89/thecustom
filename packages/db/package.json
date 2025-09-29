@@ -1,0 +1,22 @@
+{
+  "name": "@sow-workbench/db",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "prisma": "^5.8.0",
+    "@prisma/client": "^5.8.0"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} seed.ts"
+  },
+  "scripts": {
+    "generate": "prisma generate",
+    "migrate:dev": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "studio": "prisma studio",
+    "seed": "prisma db seed"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}

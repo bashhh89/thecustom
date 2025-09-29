@@ -1,0 +1,18 @@
+2025-09-26T06:19:24:  ⨯ Failed to start server
+2025-09-26T06:19:24: Error: listen EADDRINUSE: address already in use :::3001
+2025-09-26T06:19:24:     at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+2025-09-26T06:19:24:     at listenInCluster (node:net:1997:12)
+2025-09-26T06:19:24:     at Server.listen (node:net:2102:7)
+2025-09-26T06:19:24:     at /root/thecustom/node_modules/.pnpm/next@14.2.33_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/lib/start-server.js:280:16
+2025-09-26T06:19:24:     at new Promise (<anonymous>)
+2025-09-26T06:19:24:     at startServer (/root/thecustom/node_modules/.pnpm/next@14.2.33_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/lib/start-server.js:191:11)
+2025-09-26T06:19:24:     at /root/thecustom/node_modules/.pnpm/next@14.2.33_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/lib/start-server.js:310:52
+2025-09-26T06:19:24:     at Span.traceAsyncFn (/root/thecustom/node_modules/.pnpm/next@14.2.33_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/trace/trace.js:154:26)
+2025-09-26T06:19:24:     at process.<anonymous> (/root/thecustom/node_modules/.pnpm/next@14.2.33_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/lib/start-server.js:310:35)
+2025-09-26T06:19:24:     at process.emit (node:events:519:28) {
+2025-09-26T06:19:24:   code: 'EADDRINUSE',
+2025-09-26T06:19:24:   errno: -98,
+2025-09-26T06:19:24:   syscall: 'listen',
+2025-09-26T06:19:24:   address: '::',
+2025-09-26T06:19:24:   port: 3001
+2025-09-26T06:19:24: }
